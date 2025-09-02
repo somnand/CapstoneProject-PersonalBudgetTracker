@@ -38,5 +38,12 @@ public class PageController {
     {
     	return "reports";
     }
+    
+    
+    @GetMapping("/transactions")
+    public String getTransactions(Model model)
+    {
+    	return "searchTransactions";
+    }
 }
 
