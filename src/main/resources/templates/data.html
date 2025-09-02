@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Shows Data from Backend</title>
+</head>
+<body>
+
+<h3>All data from Backend</h3>
+<ul th:each="i: ${backendData}">
+	<li th:text="${i}"/>
+</ul>
+</body>
+</html>

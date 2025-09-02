@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<meta charset="ISO-8859-1">
+<title>Expense Summary and Reports</title>
+</head>
+<body>
+<h1>This page contains visual graphs for your spend trends</h1>
+<div>
+<canvas id="piechart"></canvas> 
+chart content
+</div>
+<script>
+  const ctx = document.getElementById('piechart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>
