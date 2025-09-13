@@ -1,6 +1,5 @@
 package application.models;
 
-import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -35,13 +34,18 @@ public class Transaction
 	
 	@Column(name = "trans_type")
 	@JsonProperty("trans_type")
-	protected int transactionType;
+	protected TransactionType transactionType;
+	
 	@Column(name = "trans_value")
 	@JsonProperty("trans_value")
 	protected Double transactionValue;
 	
+	@Column(name = "trans_category_type",nullable = true)
+	@JsonProperty("trans_category_type")	
+	protected CategoryType categoryType;
+	
 	@CreationTimestamp
-	@Column(name = "time",updatable = false,nullable = false)
+	@Column(name = "trans_time",updatable = false,nullable = false)
 	protected LocalDateTime transactionTime;
 	
 	public void setTransactionType() {}
