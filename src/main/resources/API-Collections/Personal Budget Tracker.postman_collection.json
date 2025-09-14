@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "81dec4ed-1161-4a45-8b9d-21ccaab36ba1",
+		"name": "Personal Budget Tracker-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41331598"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9000/dataview",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/dataview",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"dataview"
+					]
+				},
+				"description": "To test backend data"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/v1/allTransactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/v1/allTransactions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"allTransactions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/v1/addTransaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n  \"trans_type\" : 1,\r\n  \"trans_value\" : 50.0,\r\n  \"trans_category_type\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/v1/addTransaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"addTransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/v1/addBudget",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"budget_category_type\":1,\r\n    \"budget_category_value\":100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/v1/addBudget",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"addBudget"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9000/api/v1/deleteTransaction?toDeleteID=",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/v1/deleteTransaction?toDeleteID=f2dc8945-3d8a-42db-9554-f50bce85c0c1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"v1",
+						"deleteTransaction"
+					],
+					"query": [
+						{
+							"key": "toDeleteID",
+							"value": "f2dc8945-3d8a-42db-9554-f50bce85c0c1"
+						}
+					]
+				},
+				"description": "Delete the transaction based on Transaction UUID"
+			},
+			"response": []
+		}
+	]
+}
